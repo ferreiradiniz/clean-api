@@ -29,7 +29,7 @@
     "standard": "^16.0.3"
   },
   "scripts": {
-    "test": "jest --colors  --noStackTrace --passWithNoTests ",
+    "test": "jest",
     "test:unit": "yarn test --silent --watch ",
     "test:debug": "jest --colors --verbose",
     "test:staged": "yarn test --silent",
