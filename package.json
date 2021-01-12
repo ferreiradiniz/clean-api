@@ -1,0 +1,38 @@
+{
+  "name": "js_funcional",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:ferreiradiniz/clean-api.git",
+  "author": "Bruno Diniz <ferreiradiniz@msn.com>",
+  "license": "MIT",
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "yarn test:staged"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test:ci"
+    }
+  },
+  "devDependencies": {
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "lint-staged": "^10.5.3",
+    "standard": "^16.0.3"
+  },
+  "scripts": {
+    "test": "jest --colors  --noStackTrace --passWithNoTests ",
+    "test:unit": "yarn test --silent --watch ",
+    "test:debug": "jest --colors --verbose",
+    "test:staged": "yarn test --silent",
+    "test:ci": "yarn test --silent --coverage "
+  }
+}
